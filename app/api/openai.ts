@@ -57,6 +57,8 @@ export async function handle(
   try {
     const response = await requestOpenai(req);
 
+    console.log("[Response2]:",response);
+
     // list models
     if (subpath === OpenaiPath.ListModelPath && response.status === 200) {
       const resJson = (await response.json()) as OpenAIListModelResponse;
